@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Dat hang thanh cong</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container mt-5">
+		<h3>Dat hang thanh cong</h3>
+		<p>Ma Don Hang:<b th:text="${order.id}"></b></p>
+		<p>Tong Tien:<b th:text="${order.totalPrice}"></b></p>
+		<p>Ngay Dat:<b th:text="${order.createAt}"></b></p>
+		<a th:href="@{'/'}" class="btn btn-primary mt-3">Quay lai trang chu</a>
+	</div>
+</body>
+</html>

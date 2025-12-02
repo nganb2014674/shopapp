@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Danh sach san pham</title>
+<link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="d-flex justify-content-between">
+			<h3>Danh sach san pham</h3>
+			<a href="/products/add" class="btn btn-success text-decoration-none">Them san pham</a>
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Anh</td>
+					<td>Ten</td>
+					<td>Gia</td>
+					<td>Mo ta</td>
+					<td>Hanh dong</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="p:${products}">
+					<td th:text="${p.id}"></td>
+					<td>
+						<img th:src="@{'/uploads/' + ${p.image}}" width="70">
+					</td>
+					<td th:text="${p.name}"></td>
+					<td th:text="${p.price}"></td>
+					<td th:text="${p.description}"></td>
+					<td>
+						<a th:href="@{'/products/delete/' + ${p.id}}" class="btn btn-danger btn-sm">Xoa</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
+
